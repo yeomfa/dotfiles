@@ -32,6 +32,5 @@ for file in $files; do
 done
 
 echo "Moving folders to ~/.config"
-mv ~/config/nvim ~/.config/nvim
 mv ~/config/kitty ~/.config/kitty
 echo "...done"
