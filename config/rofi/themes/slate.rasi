@@ -1,0 +1,122 @@
+configuration {
+	modi:                       "drun";
+  show-icons:                 true;
+  display-drun:               "";
+	drun-display-format:        "{name}";
+}
+
+* {
+  main-color: #7fa2ac;
+}
+
+* {
+
+  background-color: #282A2E;
+  border-color: #2e343f;
+  text-color: #C5C8C6;
+
+
+  spacing: 0;
+  width: 512px;
+  spacing: 0;
+  font: "JetBrains Mono Nerd Font 11";
+  padding: 0px;
+  margin: 0px;
+}
+
+window {
+  anchor: center;
+  border-color: @main-color;
+  border-radius: 10px;
+  cursor: "default";
+  fullscreen: false;
+  location: center;
+  transparency: "real";
+  width: 400px;
+  background-color: @main-color;
+}
+
+mainbox {
+  spacing: 0px;
+  margin: 0px;
+  padding: 0px;
+  children: ["inputbar", "listview"];
+}
+
+inputbar {
+  children: ["prompt", "entry"];
+}
+
+prompt {
+  background-color: @main-color;
+  text-color: #282A2E;
+  padding: 16px;
+}
+
+textbox-prompt-colon {
+  background-color: @main-color;
+  text-color: #282A2E;
+  border: 0 0 1px 0;
+  padding: 8px 16px;
+}
+
+entry {
+  padding: 16px;
+  background-color: @main-color;
+  text-color: #282A2E;
+  placeholder: "Search...";
+}
+
+listview {
+  columns: 1;
+  lines: 6;
+  cycle: true;
+  dynamic: true;
+  scrollbar: false;
+  layout: vertical;
+  reverse: false;
+  fixed-height: true;
+  fixed-columns: true;
+  background-color: transparent;
+
+  spacing: 5px;
+  cursor: default;
+}
+
+scrollbar {
+  handle-width: 5px;
+  handle-color: @main-color;
+  background-color: #282A2E;
+}
+
+element {
+  background-color: transparent;
+  border: 0 0 1px 0;
+  padding: 16px;
+  height: 30px;
+  spacing: 10px;
+  cursor: pointer;
+}
+
+element  normal.normal {
+  background-color: #282A2E;
+}
+
+element selected.normal {
+  background-color: #424446;
+}
+
+element-icon {
+  background-color: transparent;
+  size: 25px;
+  cursor: inherit;
+}
+
+element-text {
+  background-color: transparent;
+  text-color: inherit;
+  highlight: inherit;
+  cursor: inherit;
+  vertical-align: 0.5;
+  horizontal-align: 0.0;
+}
