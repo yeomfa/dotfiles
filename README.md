@@ -27,7 +27,7 @@
 
 ## Installation 
 
-¡It is recommended to make a backup of your dotfiles before starting!
+It is recommended to make a backup of your dotfiles before starting!
 
 1. Clone the repository to /~:
 ```console
