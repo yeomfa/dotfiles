@@ -1,26 +1,51 @@
-# My dotfiles in github
+# My bspwm config on github :cat:
+
+:sparkles: This is a small setup for a minimal and beautiful environment in bspwm :sparkles:
 
 ## Dependencies
 
-### For commands:
+#### For bspwm:
 
-- xclip (Clippboard)
+- picom (Transparency and others)
+- rofi (run, drun, window, launcher)
+- polybar (Panel)
+- dunst (notify)
+- sxhkd (commands)
+
+#### For terminal:
+
+- Kitty (Terminal)
+- Zsh (Shell)
+- Oh my zsh (For shell)
+- Starship (Prompt)
+
+#### For some commands:
+
 - maim (Screenshots)
 - feh (Wallpapers)
 - betterlockscreen (Blockscreen)
 
-### For bspwm:
+## Installation 
 
-- picom (Transparency and others)
-- lxappearance (Themes and more)
-- rofi (run, drun, window, launcher)
-- polybar (Panel)
-- pcmanfm (Files manager)
-- dunst (notify)
-- sxhkd (commands)
+¡It is recommended to make a backup of your dotfiles before starting!
 
-### For terminal:
+1. Clone the repository to /~:
+```console
+git clone https://github.com/yeomfa/dotfiles
+```
 
-- terminal (kitty)
-- shell (zsh)
-- starship (prompt)
+2. You must grant permissions to the installation script:
+```console
+chmod +x install.sh
+```
+3. Then run the script:
+```console
+./install.sh
+```
+### ¡That's all, enjoy! :tada:
+
+##### Other configs:
+- Neovim [here](https://github.com/yeomfa/nvim-config)
+- *Cooming soon...*
+
+By: *Yeom* :coffee:
