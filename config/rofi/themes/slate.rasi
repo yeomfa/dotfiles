@@ -27,7 +27,7 @@ configuration {
 window {
   anchor: center;
   border-color: @main-color;
-  border-radius: 10px;
+  border-radius: 7px;
   cursor: "default";
   fullscreen: false;
   location: center;

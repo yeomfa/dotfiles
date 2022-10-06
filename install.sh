@@ -17,7 +17,7 @@ mkdir ~/.config/$backupName/configFiles ~/.config/$backupName/homeFiles
 echo ":: Moving your files to backup folder [~/.config/$backupName]..."
 
 # Backup config
-echo "[.config]"
+echo "[Files of .config]"
 for cfile in $configFiles; do
   if [ -f ~/.config/$cfile ] || [ -d ~/.config/$cfile ]; then
     mv ~/.config/$cfile ~/.config/$backupName/configFiles
@@ -27,11 +27,11 @@ done
 
 echo "done..."
 
-echo "~/"
+echo "Files of ~/"
 # Backup home
 for hfile in $homeFiles; do
-  if [ -f ~/$hfile ] || [ -d ~/$hfile ]; then
-    mv ~/$hfile ~/.config/$backupName/homeFiles
+  if [ -f ~/.$hfile ] || [ -d ~/.$hfile ]; then
+    mv ~/.$hfile ~/.config/$backupName/homeFiles
     echo "-> $hfile moved to ~/.config/$backupName/homeFiles"
   fi
 done
@@ -55,6 +55,14 @@ echo "Installed fonts"
 # Symlink's
 
 echo ":: Creating symlink files"
+
+echo "Install terminal configuration? (Y/n):"
+read terminal
+
+if [[ "$terminal" = "n" ]]; then
+  configFiles="bspwm dunst picom polybar rofi sxhkd betterlockscreenrc"
+  homeFiles=""
+fi
 
 echo "[.config]"
 for cfile in $configFiles; do

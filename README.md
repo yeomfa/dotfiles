@@ -1,4 +1,4 @@
-# My bspwm config on github :cat:
+# My i3wm config on github :cat:
 
 :sparkles: This is a small setup for a minimal and beautiful environment in bspwm :sparkles:
 
@@ -6,15 +6,19 @@
 
 #### For bspwm:
 
-- picom (Transparency and others)
+- bspwm
+- picom/jonaburg (Transparency and animations)
 - rofi (run, drun, window, launcher)
 - polybar (Panel)
 - dunst (notify)
 - sxhkd (commands)
+- xborder
 
 #### For terminal:
 
 - Kitty (Terminal)
+
+##### Optional (Only if you want the terminal configuration):
 - Zsh (Shell)
 - Oh my zsh (For shell)
 - Starship (Prompt)
