@@ -27,22 +27,18 @@ done
 
 echo "done..."
 
-echo "Files of ~/"
-# Backup home
-for hfile in $homeFiles; do
-  if [ -f ~/.$hfile ] || [ -d ~/.$hfile ]; then
-    mv ~/.$hfile ~/.config/$backupName/homeFiles
-    echo "-> $hfile moved to ~/.config/$backupName/homeFiles"
-  fi
-done
-
-echo "done..."
-
-# Font
+# Fonts
 
 echo ":: Installing font"
 echo ": Copying font..."
-cp -r ~/dotfiles/fonts/JetBrainsMonoNF ~/.fonts
+
+if [[ -d ~/.fonts ]]; then
+  cp -r ~/dotfiles/fonts/JetBrainsMonoNF ~/.fonts
+else
+  mkdir ~/.fonts
+  cp -r ~/dotfiles/fonts/JetBrainsMonoNF ~/.fonts
+fi
+
 echo "done..."
 
 echo ": Granting permissions..."
@@ -61,8 +57,11 @@ read terminal
 
 if [[ "$terminal" = "n" ]]; then
   configFiles="bspwm dunst picom polybar rofi sxhkd betterlockscreenrc"
-  homeFiles=""
+else
+  mv ~/.zshrc ~/config/$backupName/homeFiles
+  homeFiles="zshrc"
 fi
+
 
 echo "[.config]"
 for cfile in $configFiles; do
