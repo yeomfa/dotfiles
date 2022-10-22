@@ -190,3 +190,14 @@ shift + Print
 super + p
     bspc config top_padding 0 ; polybar-msg cmd toggle
 
+# Powermenu
+super + x
+    ~/dotfiles/config/rofi/scripts/powermenu/powermenu.sh
+
+# Network
+super + n
+    ~/dotfiles/config/rofi/scripts/network/network.sh
+
+# Workspace
+super + w
+    ~/dotfiles/config/rofi/scripts/workspace/workspace.sh

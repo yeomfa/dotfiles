@@ -7,6 +7,7 @@
 # $./volume.sh mtoggle
 
 device='default'    #audio device
+card='1'    #audio device
 interval='5'        #Percentage by which to update the volume
 timeout='1'         #Notification timeout in seconds
 bar_char="─"        #Character to use for the volume bar
@@ -30,11 +31,11 @@ icon_capture_off=""
 icon_capture_unk=""
 
 function get_volume {
-    amixer get Master | grep '%' | head -n 1 | cut -d '[' -f 2 | cut -d '%' -f 1
+    amixer -c "$card" get Master | grep '%' | head -n 1 | cut -d '[' -f 2 | cut -d '%' -f 1
 }
 
 function is_mute {
-    amixer get Master | grep '%' | grep -oE '[^ ]+$' | grep off > /dev/null
+    amixer -c "$card" get Master | grep '%' | grep -oE '[^ ]+$' | grep off > /dev/null
 }
 
 function send_notification {
@@ -48,7 +49,7 @@ function send_notification {
 function get_mic_toggle {
     # Send the notification for the current micrphone status
     # Get the mic status
-    micstatus=$(amixer get Capture|grep '%' | grep -oE '[^ ]+$')
+    micstatus=$(amixer -c "$card" get Capture|grep '%' | grep -oE '[^ ]+$')
     # The capture will probably have more than one channel, so we need to get the number of channels
     channels=$(wc -l <<< "$micstatus")
     # Now we are going to count the number that are "on"
@@ -70,19 +71,19 @@ function get_mic_toggle {
 case $1 in
     up)
         # Set the volume on (if it was muted)
-        amixer -D "$device" set Master on > /dev/null
+        amixer -c "$card" set Master on > /dev/null
         # Up the volume (+ $interval%)
-        amixer -D "$device" sset Master $interval%+ > /dev/null
+        amixer -c "$card" sset Master $interval%+ > /dev/null
         send_notification
 	;;
     down)
-        amixer -D "$device" set Master on > /dev/null
-        amixer -D "$device" sset Master $interval%- > /dev/null
+        amixer -c "$card" set Master on > /dev/null
+        amixer -c "$card" sset Master $interval%- > /dev/null
         send_notification
 	;;
     mute)
     	# Toggle mute
-        amixer -D "$device" set Master 1+ toggle > /dev/null
+        amixer -c "$card" set Master toggle > /dev/null
         if is_mute ; then
             dunstify -t $notify_timeout -r 2593 -u normal "$icon_audio_muted  Mute"
         else
@@ -91,7 +92,7 @@ case $1 in
 	;;
     mtoggle)
     	# Toggle microphone mute
-        amixer set Capture toggle > /dev/null
+        amixer -c "$card" set Capture toggle > /dev/null
         get_mic_toggle
 	;;
 esac

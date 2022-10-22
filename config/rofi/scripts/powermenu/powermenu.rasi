@@ -1,0 +1,81 @@
+/*
+ * Author  : yeom
+ * Mail    : yeomfa@gmail.com
+ * Github  : @yeomfa
+ *
+ */
+
+* {
+  background:                     #202020;
+  background-alt:                 #32302f;
+  foreground:                     #dedede;
+  border:                         #7fa2ac;
+  border-alt:                     #83a598;
+  selected:                       #404040;
+  urgent:                         #cc241d;
+  gray:                           #7a6d63;
+}
+
+configuration {
+	font:							              "JetBrains Mono Nerd Font 12";
+  show-icons:                     false;
+  position: 0;
+}
+
+window {
+  transparency:                   "real";
+  background-color:               @background;
+  text-color:                     @foreground;
+  border:                         0px 0px 3px 0px;
+  border-color:                   @border;
+  border-radius:                  10px;
+  height:                         10%;
+  width:                          25.5%;
+  location:                       center;
+  x-offset:                       0;
+  y-offset:                       0;
+  padding:                        0% 0% 0% 1%;
+}
+
+listview {
+  background-color:               @background;
+  margin:                         0% 0% 0% 0%;
+  spacing:                        0%;
+  cycle:                          true;
+  dynamic:                        true;
+  layout:                         horizontal;
+}
+
+mainbox {
+  background-color:               @background;
+  children:                       [ listview ];
+  spacing:                        1.5%;
+  padding:                        0% 0% 0% 0%;
+}
+
+element {
+  background-color:               @background;
+  text-color:                     @gray;
+  orientation:                    horizontal;
+  margin:                         1.5% 0.7% 1.5% 0.7%;
+}
+
+element-text {
+  background-color: 				      @background;
+  text-color:       				      inherit;
+	font:	        						      "feather 32";
+  expand:                         false;
+  horizontal-align:               0.5;
+  vertical-align:                 0.5;
+  margin:                         1.0% 1.0% 1.0% 1.0%;
+}
+
+element-text selected {
+  background-color: 				      @background-alt;
+}
+
+element selected {
+  text-color:                     @foreground;
+  background-color:               @background-alt;
+  border-radius:                  10px;
+}
