@@ -21,8 +21,6 @@
 configuration {
 	modi:                       "drun";
   show-icons:                 false;
-drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
-	window-format:              "{w} · {c} · {t}";
 }
 
 window {
@@ -49,7 +47,7 @@ mainbox {
     border-radius:               0px 0px 0px 0px;
     border-color:                @border;
     background-color:            transparent;
-    children:                    [ "inputbar", "message", "listview" ];
+    children:                    [ "inputbar", "listview" ];
 }
 
 prompt {
@@ -58,27 +56,15 @@ prompt {
 
 textbox-prompt-colon {
   expand: 						            false;
-  str: 							              "";
+  str: 							              " No folders";
   border-radius:                  7px 0px 0px 7px;
   background-color:               @background-alt;
   text-color:                     @border;
   padding:                        8px 2px 8px 12px;
 }
 
-entry {
-  background-color:               @background-alt;
-  text-color:                     @foreground;
-  placeholder-color:              @gray;
-  expand:                         true;
-  horizontal-align:               0;
-  placeholder:                    "Search app";
-  blink:                          true;
-  border-radius:                  0px 7px 7px 0px;
-  padding:                        8px;
-}
-
 inputbar {
-  children: 						          [ textbox-prompt-colon, prompt, entry ];
+  children: 						          [ textbox-prompt-colon, prompt ];
   background-color:               @background-alt;
   expand:                         false;
   border-radius:                  7px 7px 0px 0px;
@@ -89,10 +75,12 @@ inputbar {
 
 listview {
     enabled:                     true;
+    columns:                     2;
+    lines:                       4;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
-    layout:                      vertical;
+    layout:                      horizontal;
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
@@ -119,6 +107,7 @@ element {
   background-color:               @background;
   text-color:                     @gray;
   orientation:                    horizontal;
+  margin:                         90px 50px 100px 80px;
   padding:                        6px 6px 6px 6px;
 }
 
@@ -137,56 +126,3 @@ element-text {
   vertical-align:                 0.5;
   margin:                         2px 0px 2px 6px;
 }
-
-element selected {
-  text-color:                     @background;
-  background-color:               @border;
-  border-radius:                  7px;
-}
-
-element-icon {
-  background-color: transparent;
-  size: 20px;
-  padding: 0px 5px 0px 0px;
-  cursor: inherit;
-}
-
-mode-switcher{
-    enabled:                     true;
-    expand:                      false;
-    spacing:                     0px;
-    margin:                      10px 0px 0px 0px;
-    padding:                     0px;
-    border:                      0px solid;
-    border-radius:               0px;
-    border-color:                @border;
-    border-radius:               7px 7px 0px 0px;
-    background-color:            @background-alt;
-    text-color:                  @foreground;
-}
-
-button {
-    padding:                     10px;
-    border:                      0px 0px 2px 0px ;
-    border-radius:               10px 10px 0px 0px;
-    border-color:                @border;
-    background-color:            transparent;
-    text-color:                  inherit;
-    font:                        "JetBrainsMono Nerd Font Mono 16";
-    cursor:                      pointer;
-}
-
-button selected {
-    border:                      2px 2px 0px 2px ;
-    border-radius:               10px 10px 0px 0px;
-    border-color:                @border;
-    background-color:            @background;
-    text-color:                  @border;
-}
-scrollbar {
-    handle-width:                5px ;
-    handle-color:                @selected;
-    border-radius:               0px;
-    background-color:            @background-alt;
-}
-

@@ -1,4 +1,4 @@
-# My i3wm config on github :cat:
+# My BSPWM config on github :cat:
 
 :sparkles: This is a small setup for a minimal and beautiful environment in bspwm :sparkles:
 
@@ -7,12 +7,11 @@
 #### For bspwm:
 
 - bspwm
-- picom/jonaburg (Transparency and animations)
+- picom/yshui (Transparency and animations)
 - rofi (run, drun, window, launcher)
 - polybar (Panel)
 - dunst (notify)
 - sxhkd (commands)
-- xborder
 
 #### For terminal:
 

@@ -181,10 +181,10 @@ super + shift + x
 
 # Screenshot with Scrot
 super + shift + s
-    maim -s ~/Imágenes/screenshots/$(date +%s).png
+    maim -s ~/Images/screenshots/$(date +%s).png
 
 shift + Print
-    maim ~/Imágenes/screenshots/$(date +%s).jpg
+    maim ~/Images/screenshots/$(date +%s).jpg
 
 # Polybar hide/show
 super + p

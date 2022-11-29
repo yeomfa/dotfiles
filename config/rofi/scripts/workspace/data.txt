@@ -1,2 +1,1 @@
 [FOLDERS]
-/home/yeom/dotfiles/config/rofi/scripts

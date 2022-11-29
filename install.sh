@@ -17,7 +17,7 @@ mkdir ~/.config/$backupName/configFiles ~/.config/$backupName/homeFiles
 echo ":: Moving your files to backup folder [~/.config/$backupName]..."
 
 # Backup config
-echo "[Files of .config]"
+echo "[Files of .config and home]"
 for cfile in $configFiles; do
   if [ -f ~/.config/$cfile ] || [ -d ~/.config/$cfile ]; then
     mv ~/.config/$cfile ~/.config/$backupName/configFiles
@@ -55,7 +55,7 @@ echo ":: Creating symlink files"
 echo "Install terminal configuration? (Y/n):"
 read terminal
 
-if [[ "$terminal" = "n" ]]; then
+if [[ "$terminal" = "n" || "$terminal" = "N" ]]; then
   configFiles="bspwm dunst picom polybar rofi sxhkd betterlockscreenrc"
 else
   mv ~/.zshrc ~/config/$backupName/homeFiles
@@ -72,10 +72,10 @@ done
 echo "done..."
 
 echo "[~/]"
-for hfile in $homeFiles; do
-  ln -s ~/dotfiles/$hfile ~/.$hfile
-  echo "-> Symlink created to $hfile"
-done
+# for hfile in $homeFiles; do
+ln -s ~/dotfiles/$hfile ~/.$hfile
+echo "-> Symlink created to $hfile"
+# done
 
 echo "done..."
 

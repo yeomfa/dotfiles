@@ -32,4 +32,4 @@ sxhkd &
 pkill dunst
 dunst -conf ~/dotfiles/config/dunst/dunstrc &
 
-feh --bg-fill ~/dotfiles/wallpapers/japane.jpg
+feh --bg-fill ~/dotfiles/wallpapers/girlsnow.jpg
