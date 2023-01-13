@@ -103,3 +103,7 @@ export EDITOR='nvim'
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 xmodmap -e "keycode  59 = comma semicolon comma semicolon less multiply U2022" && xmodmap -e "keycode  60 = period colon period colon greater division periodcentered" && xmodmap -e "keycode  51 = braceright bracketright ccedilla Ccedilla grave braceright braceright dead_breve"
 eval "$(starship init zsh)"
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

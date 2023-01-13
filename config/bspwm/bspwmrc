@@ -1,6 +1,6 @@
 #! /bin/sh
 
-bspc monitor -d I II III IV V
+bspc monitor -d free free2 shell browser music chat
 bspc config border_width        1
 bspc config focused_border_color \#7fa2ac
 # bspc config normal_border_color \#deeaff
