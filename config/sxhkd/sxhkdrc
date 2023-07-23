@@ -138,19 +138,19 @@ super + {Left,Down,Up,Right}
 
 # Increase volume
 XF86AudioRaiseVolume
-    ~/.config/dunst/scripts/volume.sh up
+    ~/dotfiles/config/dunst/scripts/volume.sh up
 
 # Decrease volume
 XF86AudioLowerVolume
-    ~/.config/dunst/scripts/volume.sh down
+    ~/dotfiles/config/dunst/scripts/volume.sh down
 
 # Mute Audio
 XF86AudioMute
-    ~/.config/dunst/scripts/volume.sh mute
+    ~/dotfiles/config/dunst/scripts/volume.sh mute
 
 # Mic toggle
 super + shift + i
-    ~/.config/dunst/scripts/volume.sh mtoggle
+    ~/dotfiles/config/dunst/scripts/volume.sh mtoggle
 
 # Play
 XF86AudioPlay
@@ -170,18 +170,18 @@ XF86AudioStop
 
 # Brighness control
 XF86MonBrightnessUp
-    ~/.config/dunst/scripts/brightness.sh up
+    ~/dotfiles/config/dunst/scripts/brightness.sh up
 
 XF86MonBrightnessDown
-    ~/.config/dunst/scripts/brightness.sh down
+    ~/dotfiles/config/dunst/scripts/brightness.sh down
 
 # Betterlockscreen
 super + shift + x
     betterlockscreen -l dim
 
-# Screenshot with Scrot
+# Screenshot with maim
 super + shift + s
-    maim -s ~/Images/screenshots/$(date +%s).png
+    ~/dotfiles/config/sxhkd/scripts/sclip.sh
 
 shift + Print
     maim ~/Images/screenshots/$(date +%s).jpg
@@ -201,3 +201,10 @@ super + n
 # Workspace
 super + w
     ~/dotfiles/config/rofi/scripts/workspace/workspace.sh
+
+# Draw
+super + shift + u
+  xinput --set-prop "Gaming Mouse" "Coordinate Transformation Matrix"  0.25 0 0 0 0.25 0 0 0 1
+
+super + u
+  xinput --set-prop "Gaming Mouse" "Coordinate Transformation Matrix" 1 0 0 0 1 0 0 0 1

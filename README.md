@@ -18,8 +18,8 @@
 - Kitty (Terminal)
 
 ##### Optional (Only if you want the terminal configuration):
-- Zsh (Shell)
-- Oh my zsh (For shell)
+
+- Fish (Shell)
 - Starship (Prompt)
 
 #### For some commands:

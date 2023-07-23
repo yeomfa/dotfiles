@@ -18,13 +18,13 @@ wlan=$(nmcli dev | grep wifi | sed 's/ \{2,\}/|/g' | cut -d '|' -f1 | head -1)
 ## TURN OFF WIFI FUNCTION ##
 turnoff() {
   nmcli radio wifi off
-  notify-send "  WiFi turned off"
+  notify-send -t 2000 "  WiFi turned off"
 }
 
 ## TURN ON WIFI FUNCTION ##
 turnon() {
   nmcli radio wifi on
-  notify-send "  WiFi turned on"
+  notify-send -t 2000 "  WiFi turned on"
 }
 
 ## DISCONNECT WIFI FUNCTION ##
@@ -32,13 +32,13 @@ disconnect() {
   nmcli device disconnect "$wlan"
   constate=$(nmcli dev | grep wifi | sed 's/ \{2,\}/|/g' | cut -d '|' -f3 | head -1)
   if [ "$constate" = "disconnected" ]; then
-    notify-send "睊 WiFi has been disconnected"
+    notify-send -t 2000 "睊 WiFi has been disconnected"
   fi
 }
 
 ## CONNECT FUNCTION ##
 connect() {
-  notify-send "直 Scannig networks..."
+  notify-send -t 2000 "直 Scannig networks..."
   bssid=$(nmcli device wifi list | sed -n '1!p' | cut -b 9- | $ROFI2 "" | cut -d' ' -f1)
 }
 
